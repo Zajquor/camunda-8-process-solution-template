@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibersap xmlns="urn:hibersap:hibersap-configuration:1.1">
+  <session-manager name="A12">
+    <properties>
+      <property name="jco.client.client" value="700" />
+      <property name="jco.client.user" value="3143" />
+      <property name="jco.client.passwd" value="Sckirchberg98" />
+      <property name="jco.client.lang" value="de" />
+      <property name="jco.client.ashost" value="PAPRH-SAP72.pap.local" />
+      <property name="jco.client.sysnr" value="00" />
+      <property name="jco.destination.pool_capacity" value="5" />
+    </properties>
+    <annotated-classes>
+      <annotated-class>org.example.camunda.process.solution.FlightListBapi</annotated-class>
+    </annotated-classes>
+  </session-manager>
+</hibersap>
