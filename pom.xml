@@ -66,6 +66,28 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-java8</artifactId>
+    </dependency>
+
+    <dependency>
       <!-- see: https://docs.camunda.io/docs/components/best-practices/development/testing-process-definitions/#writing-process-tests-in-java -->
       <groupId>io.camunda</groupId>
       <artifactId>zeebe-process-test-extension-testcontainer</artifactId>
@@ -98,13 +120,6 @@
       <version>4.0.0</version>
     </dependency>
 
-<!--    <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-      <version>4.0.0</version>
-      <scope>runtime</scope>
-    </dependency>-->
-
     <dependency>
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
@@ -116,13 +131,6 @@
       <artifactId>jaxb-ri</artifactId>
       <version>2.3.3</version>
     </dependency>
-
-<!--    &lt;!&ndash; Runtime, com.sun.xml.bind module &ndash;&gt;
-    <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-runtime</artifactId>
-      <version>4.0.0</version>
-    </dependency>-->
 
   </dependencies>
 
