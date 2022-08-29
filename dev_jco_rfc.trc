@@ -112,3 +112,24 @@ COUNTER     4
     return code: RFC_FAILURE (1)
     error group: 102
     key: RFC_ERROR_COMMUNICATION
+
+**** Error file opened at 20220829 162713 Central European Summer Time Rel 3.0.11 (2014-04-15) [753.1018]
+Error:  >Mon Aug 29 16:27:13,006<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+<RfcGetException
+
+Error:  >Mon Aug 29 16:27:13,303<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+<RfcGetException
+
+Error:  >Mon Aug 29 16:27:13,566<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+<RfcGetException
+
+
+**** Error file opened at 20220829 170916 Central European Summer Time Rel 3.0.11 (2014-04-15) [753.1018]
+Error:  >Mon Aug 29 17:09:16,696<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+<RfcGetException
+
+
+**** Error file opened at 20220829 173340 Central European Summer Time Rel 3.0.11 (2014-04-15) [753.1018]
+Error:  >Mon Aug 29 17:33:40,715<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
+<RfcGetException
+

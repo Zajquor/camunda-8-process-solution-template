@@ -3,8 +3,8 @@
   <session-manager name="A12">
     <properties>
       <property name="jco.client.client" value="700" />
-      <property name="jco.client.user" value="${env.SAP_USR}" />
-      <property name="jco.client.passwd" value="${env.SAP_PW}" />
+      <property name="jco.client.user" value="3143" />
+      <property name="jco.client.passwd" value="Sckirchberg98" />
       <property name="jco.client.lang" value="de" />
       <property name="jco.client.ashost" value="192.168.200.168" />
       <property name="jco.client.sysnr" value="01" />
