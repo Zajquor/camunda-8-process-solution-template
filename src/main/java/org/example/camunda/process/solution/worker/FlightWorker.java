@@ -42,6 +42,8 @@ public class FlightWorker {
                 .send()
                 .exceptionally( throwable -> { throw new RuntimeException("Could not complete job " + job, throwable); });
     }
+
+//  TODO replace hardcoded PW and USR in hibersap.xml
     public static SessionManager createSessionManager() {
 /*        SessionManagerConfig cfg = new SessionManagerConfig("A12")
                 .setContext(JCoContext.class.getName())
