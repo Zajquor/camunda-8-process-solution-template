@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <name>Camunda Process Solution</name>
-  <description>A process solution for Camunda Platform 8</description>
-  <groupId>org.example.camunda.process.solution</groupId>
-  <artifactId>camunda-process-solution</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.3</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
-
-  <properties>
-    <java.version>8</java.version>
-    <spring-zeebe.version>8.0.7</spring-zeebe.version>
-    <zeebe.version>8.0.5</zeebe.version>
-  </properties>
-
   <dependencies>
 
     <dependency>
@@ -120,12 +99,14 @@
       <version>4.0.0</version>
     </dependency>
 
+    <!--    version 2.3.3 is needed, because javax is not supported in newer versions-->
     <dependency>
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
       <version>2.3.3</version>
     </dependency>
 
+    <!--    version 2.3.3 is needed, because javax is not supported in newer versions-->
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-ri</artifactId>
@@ -133,6 +114,27 @@
     </dependency>
 
   </dependencies>
+
+  <modelVersion>4.0.0</modelVersion>
+  <name>Camunda Process Solution</name>
+  <description>A process solution for Camunda Platform 8</description>
+  <groupId>org.example.camunda.process.solution</groupId>
+  <artifactId>camunda-process-solution</artifactId>
+
+  <version>1.0.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.3</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <properties>
+    <java.version>8</java.version>
+    <spring-zeebe.version>8.0.7</spring-zeebe.version>
+    <zeebe.version>8.0.5</zeebe.version>
+  </properties>
 
   <build>
     <plugins>
