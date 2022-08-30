@@ -38,26 +38,23 @@ public class FlightWorker {
 
 //      Handing the Data over to Camunda
         client.newCompleteCommand(job.getKey())
-                .variables("{\"Airline\": \"" + flightList.getFromCountryKey() + "\"}")
+                .variables("{\"Airline\": \"" + flightList.getAirlineCarrier() + "\"}")
                 .send()
                 .exceptionally( throwable -> { throw new RuntimeException("Could not complete job " + job, throwable); });
     }
 
-//  TODO replace hardcoded PW and USR in hibersap.xml
     public static SessionManager createSessionManager() {
-/*        SessionManagerConfig cfg = new SessionManagerConfig("A12")
-                .setContext(JCoContext.class.getName())
-                .setJcaConnectionFactory("java:/eis/sap/A12")
-                .setJcaConnectionSpecFactory("org.hibersap.execution.jca.cci." + "SapBapiJcaAdapterConnectionSpecFactory")
-                .setProperty("jco.client.client", "700")
+        SessionManagerConfig cfg = new SessionManagerConfig("A12")
+                .setProperty("jco.client.client", System.getenv("SAP_MANDATE"))
                 .setProperty("jco.client.user", System.getenv("SAP_USR"))
                 .setProperty("jco.client.passwd", System.getenv("SAP_PW"))
                 .setProperty("jco.client.lang", "de")
-                .setProperty("jco.client.ashost", "192.168.200.168")
-                .setProperty("jco.client.sysnr", "01")
+                .setProperty("jco.client.ashost", System.getenv("SAP_HOST"))
+                .setProperty("jco.client.sysnr", System.getenv("SAP_SYSNR"))
                 .setProperty("jco.destination.pool_capacity", "5")
-                .addAnnotatedClass(FlightListBapi.class);*/
-        AnnotationConfiguration configuration = new AnnotationConfiguration("A12");
+                .addAnnotatedClass(FlightListBapi.class);
+
+        AnnotationConfiguration configuration = new AnnotationConfiguration(cfg);
         return configuration.buildSessionManager();
     }
 }

@@ -133,3 +133,43 @@ Error:  >Mon Aug 29 17:09:16,696<    >RfcGetException rc (7) message: Name oder 
 Error:  >Mon Aug 29 17:33:40,715<    >RfcGetException rc (7) message: Name oder Kennwort ist nicht korrekt (Wiederholen Sie die Anmeldung)
 <RfcGetException
 
+
+**** Error file opened at 20220830 115404 Central European Summer Time Rel 3.0.11 (2014-04-15) [753.1018]
+Error:  >Tue Aug 30 11:54:04,846<    RfcException:
+    message: Parameter ABAP system number ('sysnr') needs to be a two digit number string instead of 'SAP_SYSNR'
+    return code: RFC_INVALID_PARAMETER (19)
+    error group: 101
+    key: RFC_ERROR_PROGRAM
+	at com.sap.conn.rfc.api.RfcOptions.checkSystemNumber(RfcOptions.java:453)
+	at com.sap.conn.rfc.api.RfcOptions.checkParameters(RfcOptions.java:277)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.initialize(MiddlewareJavaRfc.java:1365)
+	at com.sap.conn.jco.rt.MiddlewareJavaRfc$JavaRfcClient.connect(MiddlewareJavaRfc.java:1395)
+	at com.sap.conn.jco.rt.ClientConnection.connect(ClientConnection.java:725)
+	at com.sap.conn.jco.rt.RepositoryConnection.connect(RepositoryConnection.java:52)
+	at com.sap.conn.jco.rt.PoolingFactory.init(PoolingFactory.java:115)
+	at com.sap.conn.jco.rt.ConnectionManager.createFactory(ConnectionManager.java:350)
+	at com.sap.conn.jco.rt.DefaultConnectionManager.createFactory(DefaultConnectionManager.java:46)
+	at com.sap.conn.jco.rt.ConnectionManager.getFactory(ConnectionManager.java:324)
+	at com.sap.conn.jco.rt.RfcDestination.getSystemID(RfcDestination.java:1011)
+	at com.sap.conn.jco.rt.RepositoryManager.getRepository(RepositoryManager.java:31)
+	at com.sap.conn.jco.rt.RfcDestination.initRepository(RfcDestination.java:966)
+	at com.sap.conn.jco.rt.RfcDestination.getRepository(RfcDestination.java:1077)
+	at com.sap.conn.jco.rt.RfcDestination.getRepository(RfcDestination.java:33)
+	at org.hibersap.execution.jco.JCoConnection.getRepository(JCoConnection.java:165)
+	at org.hibersap.execution.jco.JCoConnection.execute(JCoConnection.java:84)
+	at org.hibersap.session.SessionImpl.execute(SessionImpl.java:109)
+	at org.hibersap.session.SessionImpl.execute(SessionImpl.java:92)
+	at org.example.camunda.process.solution.worker.FlightWorker.handleJobCallSAP(FlightWorker.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at io.camunda.zeebe.spring.client.bean.MethodInfo.invoke(MethodInfo.java:46)
+	at io.camunda.zeebe.spring.client.jobhandling.JobHandlerInvokingSpringBeans.handle(JobHandlerInvokingSpringBeans.java:42)
+	at io.camunda.zeebe.client.impl.worker.JobRunnableFactory.executeJob(JobRunnableFactory.java:44)
+	at io.camunda.zeebe.client.impl.worker.JobRunnableFactory.lambda$create$0(JobRunnableFactory.java:39)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
