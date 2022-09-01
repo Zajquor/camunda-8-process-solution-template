@@ -11,6 +11,7 @@ import org.hibersap.session.Session;
 import org.hibersap.session.SessionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +20,14 @@ public class FlightWorker {
     private static final Logger LOG = LoggerFactory.getLogger(FlightWorker.class);
     SessionManager sessionManager;
     Session session;
+    @Value("${SAP_HOST}")
+    static String SAP_HOST;
+    @Value("${SAP_MANDATE}")
+    static String SAP_MANDATE;
+    @Value("${SAP_SYSNR}")
+    static String SAP_SYSNR;
+    @Value("${SAP_LANG}")
+    static String SAP_LANG;
 
     @ZeebeWorker(type = "callSap")
     public void handleJobCallSAP(final JobClient client, final ActivatedJob job) {
@@ -38,19 +47,19 @@ public class FlightWorker {
 
 //      Handing the Data over to Camunda
         client.newCompleteCommand(job.getKey())
-                .variables("{\"Airline\": \"" + flightList.getAirlineCarrier() + "\"}")
+                .variables("{\"Abflugsland\": \"" + flightList.getFromCountryKey() + "\"}")
                 .send()
                 .exceptionally( throwable -> { throw new RuntimeException("Could not complete job " + job, throwable); });
     }
 
     public static SessionManager createSessionManager() {
         SessionManagerConfig cfg = new SessionManagerConfig("A12")
-                .setProperty("jco.client.client", System.getenv("SAP_MANDATE"))
+                .setProperty("jco.client.client", SAP_MANDATE)
                 .setProperty("jco.client.user", System.getenv("SAP_USR"))
                 .setProperty("jco.client.passwd", System.getenv("SAP_PW"))
-                .setProperty("jco.client.lang", "de")
-                .setProperty("jco.client.ashost", System.getenv("SAP_HOST"))
-                .setProperty("jco.client.sysnr", System.getenv("SAP_SYSNR"))
+                .setProperty("jco.client.lang", SAP_LANG)
+                .setProperty("jco.client.ashost", SAP_HOST)
+                .setProperty("jco.client.sysnr", SAP_SYSNR)
                 .setProperty("jco.destination.pool_capacity", "5")
                 .addAnnotatedClass(FlightListBapi.class);
 
