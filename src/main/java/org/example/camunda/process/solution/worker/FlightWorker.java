@@ -53,7 +53,7 @@ public class FlightWorker {
     }
 
     public static SessionManager createSessionManager() {
-        SessionManagerConfig cfg = new SessionManagerConfig("A13")
+        SessionManagerConfig cfg = new SessionManagerConfig("A12")
                 .setProperty("jco.client.client", SAP_MANDATE)
                 .setProperty("jco.client.user", System.getenv("SAP_USR"))
                 .setProperty("jco.client.passwd", System.getenv("SAP_PW"))
