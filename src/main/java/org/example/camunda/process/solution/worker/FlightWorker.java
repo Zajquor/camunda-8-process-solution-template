@@ -54,12 +54,12 @@ public class FlightWorker {
 
     public static SessionManager createSessionManager() {
         SessionManagerConfig cfg = new SessionManagerConfig("A12")
-                .setProperty("jco.client.client", SAP_MANDATE)
+                .setProperty("jco.client.client", "700")
                 .setProperty("jco.client.user", System.getenv("SAP_USR"))
                 .setProperty("jco.client.passwd", System.getenv("SAP_PW"))
-                .setProperty("jco.client.lang", SAP_LANG)
-                .setProperty("jco.client.ashost", SAP_HOST)
-                .setProperty("jco.client.sysnr", SAP_SYSNR)
+                .setProperty("jco.client.lang", "de")
+                .setProperty("jco.client.ashost", "192.168.200.168")
+                .setProperty("jco.client.sysnr", "01")
                 .setProperty("jco.destination.pool_capacity", "5")
                 .addAnnotatedClass(FlightListBapi.class);
 
